@@ -1,41 +1,48 @@
 import React, { Component } from "react";
 class Counter extends Component {
   state = {
-    Roll: 15,
-    horny: ["ram1", "ram2", "ram3"]
+    count: 0
   };
-  render() {
-    // this.colorBadge();
+  //constructor() {
+  // super();
+  // this.clickI = this.clickI.bind(this);
+  //}
+  clickI = product => {
+    console.log(product);
+    this.setState({ count: this.state.count + 1 });
+  };
+  clickD = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+  heCounts() {
+    return this.state.count === 0 ? "Zero" : this.state.count;
+  }
+  colorCorrection() {
+    return this.state.count < 0
+      ? "btn-block text-warning badge-danger"
+      : "btn-block text-light badge-success";
+  }
 
+  render() {
     return (
-      <div>
-        {/* 
-        <span className={this.colorBadge()}>{this.getRollItSelf()}</span>
-        <h1 className="btn btn-outline-warning">Niyeti</h1>
-        <button className=" btn-warning disabled">Increase</button>
-        <button className=" btn-outline-info btn-lg ">Decrease</button>
-        <badge className="btn btn-block btn-success text-left">
-          success duihhh!!!!
-        </badge>
-        <ul>
-          {this.state.horny.map(tag => (
-            <li key={tag}>
-              <h1 className="btn btn-warning">{tag}</h1>
-            </li>
-          ))}
-        </ul>
-         */}
+      <div className="text-center">
+        <span className="text=danger btn-block btn-info btn-disable">
+          So this will be the heading and below it will be the buttons that will
+          focus onm increment and stuff
+        </span>
+        <span className={this.colorCorrection()}>{this.heCounts()}</span>
+        <button
+          className="btn btn-success text-warning "
+          onClick={() => this.clickI({ id: 1 })}
+        >
+          Increase
+        </button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button className="btn btn-dark text-danger " onClick={this.clickD}>
+          Decrease
+        </button>
       </div>
     );
-  }
-  getRollItSelf() {
-    return this.state.Roll === 15 ? "Fifteen" : this.state.Roll;
-  }
-
-  colorBadge() {
-    let checker = "btn btn-lg btn-";
-    checker += this.state.Roll === 15 ? "success" : "dark";
-    return checker;
   }
 }
 
