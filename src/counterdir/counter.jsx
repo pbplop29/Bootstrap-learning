@@ -22,6 +22,13 @@ class Counter extends Component {
       ? "btn-block text-warning badge-danger"
       : "btn-block text-light badge-success";
   }
+  //so comments
+  //cannot
+  //be
+  //added
+  //directly
+  //wherever
+  //but i will try
 
   render() {
     return (
@@ -37,7 +44,7 @@ class Counter extends Component {
         >
           Increase
         </button>
-        {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button className="btn btn-dark text-danger " onClick={this.clickD}>
           Decrease
         </button>
